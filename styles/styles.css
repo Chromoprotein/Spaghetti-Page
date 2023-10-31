@@ -1,0 +1,154 @@
+:root {
+    --light-color1:#93B1A6;
+    --light-color2:#5C8374;
+    --dark-color1:#183D3D;
+    --dark-color2:#040D12;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: var(--light-color2);
+}
+/*HEADER AND NAVBAR*/
+header {
+    position: fixed;
+    top:0;
+    z-index: 999;
+    width: 100%;
+    background-color: var(--dark-color2);
+}
+#navbar {
+    float:right;
+    padding: 0;
+}
+#navbar a {
+    text-decoration: none;
+    color: var(--light-color2);
+    font-size: 2em;
+    height:100%;
+    display: inline-block; /*so it can have height*/
+    padding: 10px;
+}
+#navbar a:hover {
+    color:var(--dark-color2);
+    background-color: var(--light-color2);
+}
+@media (prefers-reduced-motion: no-preference) {
+    * {
+      scroll-behavior: smooth;
+    }
+}
+/*GENERAL*/
+main {
+    position: absolute;
+    top:50px;
+}
+section {
+    padding:50px;
+}
+h2 {
+    color:var(--light-color1);
+    font-size:2rem;
+    text-align:center;    
+}
+/*WELCOME SECTION*/
+#welcome-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    min-height:100vh;
+}
+@media (max-width:800px) {
+    #welcome-section {
+        grid-template-columns: 1fr;
+    }
+}
+#welcome-image {
+    width:100%;
+    max-width: 500px;
+    padding:20px;
+}
+#welcome-title {
+    color: var(--dark-color2);
+    font-size: 2rem;
+    text-align:center;
+}
+/*DESCRIPTION SECTION*/
+#description {
+    background-color: var(--dark-color1);
+    min-height:100vh;
+    font-size: 1.5em;
+    text-align:center; /*aligning the ul*/
+}
+#description-list {
+    /*CENTERING THE LIST
+    OPTION B:
+    display: table;
+    margin: 0 auto;
+    OPTION C: 
+    width:400px or whatever
+    margin:0 auto*/
+    display:inline-block; /*align applies on the bullet points too*/
+    text-align:left; /*aligning the li; left justify*/
+    line-height: 1.5;
+}
+/*PROJECT SECTION*/
+#projects {
+    background-color: var(--dark-color2);
+    min-height:100vh;
+}
+#project-flex-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    row-gap:50px;
+}
+.project-tile {
+    position:relative;
+}
+.project-image {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    max-width: 350px;
+    object-fit: cover;
+}
+.project-caption {
+    position:absolute;
+    top:0;
+    font-size:2em;
+    color:var(--dark-color1);
+    padding:10px;
+    background-image: linear-gradient(var(--light-color1), 50%, transparent);
+    width:100%;
+    height:30%;
+    text-align: center;
+}
+.project-tile:hover .project-caption {
+    color: var(--dark-color2);
+}
+/*CONTACT SECTION*/
+#links-section {
+    min-height:50vh;
+    background-color: var(--dark-color1);
+}
+#links-grid {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    justify-content: center; /*good on small screen*/
+    align-items:center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.contact-img {
+    width: 100%;
+    max-width: 100px;
+    padding: 10px;
+}
